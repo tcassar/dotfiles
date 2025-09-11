@@ -1,16 +1,19 @@
 # Dotfiles
 
-In the interest of easily reproducing environments, handy dotfiles (and documentation about tooling) is all stored here.
+There are some things you need to install for this to work.
+If I were a sensible man I'd setup nix, but I'm not so I haven't.
 
-Repo root is conceptually `~`.
+## Reqs
+- Homebrew
+- Ghostty
+- Aerospace
+- tmux
+- tmux plugin manager (press <leader> -I once installed)
+- neovim (don't use brew mirror, its old)
+- starship (prompt)
+- a nerd font
+- Karabiner (to remap keys)
 
-## Tracking dotfiles
+... and anything else which breaks when you try to install things
 
-- Using [https://mitxela.com/projects/dotfiles_management](https://mitxela.com/projects/dotfiles_management) as a guide...
-
-## Installs
-
-- Neovim: [github.com/neovim/neovim/blob/master/INSTALL.md](https://github.com/neovim/neovim/blob/master/INSTALL.md)
-- Tmux: `apt install tmux`
-- Tmux Package Manager: [github.com/tmux-plugins/tpm](https://github.com/tmux-plugins/tpm)
 
