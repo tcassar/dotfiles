@@ -43,8 +43,34 @@ zinit light jeffreytse/zsh-vi-mode
 # fzf for tab completions 
 zinit light Aloxaf/fzf-tab
 
+# syntax highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 . "$HOME/.local/bin/env"
+eval "$(direnv hook zsh)" # or bash
+export GOPATH="$HOME/gopath"
+export PATH="$GOPATH/bin:$PATH"
+
+# - added by install_latest_codex.sh -
+case "$(uname -s),$(uname -m)" in
+  Linux,x86_64)  export PATH="$HOME/.local/bin/x86_64:$PATH" ;;
+  Linux,aarch64) export PATH="$HOME/.local/bin/aarch64:$PATH" ;;
+  Darwin,x86_64) export PATH="$HOME/.local/bin/x86_64:$PATH" ;;
+  Darwin,arm64)  export PATH="$HOME/.local/bin/aarch64:$PATH" ;;
+esac
+
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+zstyle ':completion:*' menu select
+
+
+# Keep session history split, but let rev-i search search everything
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt INC_APPEND_HISTORY_TIME
